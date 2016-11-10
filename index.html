@@ -11,7 +11,7 @@
 	</head>
 	<body>
 
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<nav class="navbar navbar-default navbar-fixed-top">
 		  <div class="container-fluid">
 		    <ul class="nav navbar-nav">
 		      <li class="active"><a href="#">Home</a></li>
@@ -27,19 +27,54 @@
 				<div class="col-md-12"></div>
 			</div>
 			<div class="row buttons">
-				<div class="col-md-1 sort"><p>sort</p></div>
-				<div class="col-md-1 genres"><p>genres</p></div>
-				<div class="col-md-1 categories"><p>categories</p></div>
-				<div class="col-md-1 suggestions"><p>suggestions</p></div>
-				<div class="col-md-7"></div>
-				<div class="col-md-1 search"><p>search</p></div>
+				<div class="col-md-4 sort">
+					<div class="btn-group">
+						<div class="btn-group dropup">
+							<button class="btn btn-default dropdown-toggle dropup" data-toggle="dropdown" type="button">Sort By<span class="caret"></span></button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Rating</a></li>
+								</ul>
+						</div>
+						<div class="btn-group dropup">
+							<button class="btn btn-default dropdown-toggle dropup" data-toggle="dropdown" type="button">Genres<span class="caret"></span></button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Sci-Fi</a></li>
+									<li><a href="#">Western</a></li>
+									<li><a href="#">Drama</a></li>
+									<li><a href="#">Animated</a></li>
+								</ul>
+						</div>
+						<div class="btn-group dropup">
+							<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Categories<span class="caret"></span></button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">TV</a></li>
+									<li><a href="#">Movies</a></li>
+									<li><a href="#">Anime</a></li>
+								</ul>
+						</div>
+						<div class="btn-group dropup">
+							<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Suggestions<span class="caret"></span></button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">????</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4 search">
+				    <div class="input-group">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default" type="button">Enter</button>
+				      </span>
+				      <input type="text" class="form-control" placeholder="Enter Title">
+				  </div>
+				</div>
 			</div>
 			<div class="row movies">
 				<div class="col-md-12"></div>
 			</div>
 			<div class="row">
 				<div class="col-md-4 description"></div>
-				<div class="col-md-8 description-buffer"></div>
 			</div>
 		</div>
 

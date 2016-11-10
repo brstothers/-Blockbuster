@@ -2,13 +2,16 @@ p {
 	color: white;
 }
 
+body {
+	background-color: lightblue
+}
+
 .navbar-brand {
 	float:none;
 }
 
 .buffer {
 	height: 150px;
-	background-color: grey;
 }
 
 .movies {
@@ -17,13 +20,11 @@ p {
 }
 
 .buttons {
-	background-color: lightgrey;
-	height: 25px;
+	height: 35px;
 }
 
 .sort {
 	height: 25px;
-	background-color: darkblue;
 }
 
 .genres {
@@ -43,16 +44,10 @@ p {
 
 .search {
 	height: 25px;
-	background-color: mediumslateblue;
 }
 
 .description {
 	height: 300px;
 	background-color: lightgrey;
-}
-
-.description-buffer {
-	height: 300px;
-	background-color: grey;
 }
 
