@@ -1,0 +1,53 @@
+p {
+	color: white;
+}
+
+body {
+	background-color: lightblue
+}
+
+.navbar-brand {
+	float:none;
+}
+
+.buffer {
+	height: 150px;
+}
+
+.movies {
+	height: 450px;
+	background-color: black;
+}
+
+.buttons {
+	height: 35px;
+}
+
+.sort {
+	height: 25px;
+}
+
+.genres {
+	height: 25px;
+	background-color: skyblue;
+}
+
+.categories {
+	height: 25px;
+	background-color: steelblue;
+}
+
+.suggestions {
+	height: 25px;
+	background-color: powderblue;
+}
+
+.search {
+	height: 25px;
+}
+
+.description {
+	height: 300px;
+	background-color: lightgrey;
+}
+
