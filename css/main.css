@@ -3,7 +3,7 @@ p {
 }
 
 body {
-	background-color: lightgrey;
+	background-color: lightblue
 }
 
 .navbar-brand {
@@ -21,7 +21,6 @@ body {
 
 .buttons {
 	height: 35px;
-	background-color: grey;
 }
 
 .sort {
@@ -45,7 +44,6 @@ body {
 
 .search {
 	height: 25px;
-	background-color: mediumslateblue;
 }
 
 .description {
