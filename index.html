@@ -8,6 +8,17 @@
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="css/main.css">
 		<title>Blockbuster</title>
+
+		<script>
+		var currPoster = 'br';
+
+		function selected(id)
+		{
+			document.getElementById(currPoster).className = "notselected";
+			currPoster = id;
+			document.getElementById(currPoster).className = "selected";
+		}
+		</script>
 	</head>
 	<body>
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -74,34 +85,34 @@
 					<tr>
 						<td>
 							<div class="poster">
-								<img class="selected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#br').modal('show');" src="images/img1.jpg"></img>
+								<img id="br" class="selected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#br-m').modal('show'); selected(this.id);" src="images/img1.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#pm').modal('show');" src="images/img2.jpg"></img>
+								<img id="pm" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#pm-m').modal('show'); selected(this.id);" src="images/img2.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#fmf').modal('show');" src="images/img3.jpg"></img>
+								<img id="fmf" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#fmf-m').modal('show'); selected(this.id);" src="images/img3.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#ww').modal('show');" src="images/img4.jpg"></img>
+								<img id="ww" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#ww-m').modal('show'); selected(this.id);" src="images/img4.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#hni').modal('show');" src="images/img5.jpg"></img>
+								<img id="hni" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#hni-m').modal('show'); selected(this.id);" src="images/img5.jpg"></img>
 							</div>
 						</td>
 					</tr>
 				</table>
 			</div>
 
-			<div id="br" class="modal fade" role="dialog">
+			<div id="br-m" class="modal fade" role="dialog">
 			    <div class="modal-content">
 			      	<div class="modal-body">
 			        	<p>Blade Runner</p>
@@ -112,7 +123,7 @@
 			    </div>
 			</div>
 
-			<div id="pm" class="modal fade" role="dialog">
+			<div id="pm-m" class="modal fade" role="dialog">
 			    <div class="modal-content">
 			      	<div class="modal-body">
 			        	<p>Princess Mononoke</p>
@@ -123,7 +134,7 @@
 			    </div>
 			</div>
 
-			<div id="fmf" class="modal fade" role="dialog">
+			<div id="fmf-m" class="modal fade" role="dialog">
 			    <div class="modal-content">
 			      	<div class="modal-body">
 			        	<p>Fantastic Mr. Fox</p>
@@ -134,7 +145,7 @@
 			    </div>
 			</div>
 
-			<div id="ww" class="modal fade" role="dialog">
+			<div id="ww-m" class="modal fade" role="dialog">
 			    <div class="modal-content">
 			      	<div class="modal-body">
 			        	<p>Westworld</p>
@@ -145,7 +156,7 @@
 			    </div>
 			</div>
 
-			<div id="hni" class="modal fade" role="dialog">
+			<div id="hni-m" class="modal fade" role="dialog">
 			    <div class="modal-content">
 			      	<div class="modal-body">
 			        	<p>Hajime no Ippo</p>
