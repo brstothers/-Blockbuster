@@ -10,11 +10,10 @@
 		<title>Blockbuster</title>
 	</head>
 	<body>
-
 		<nav class="navbar navbar-default navbar-fixed-top">
 		  <div class="container-fluid">
 		    <ul class="nav navbar-nav">
-		      <li class="active"><a href="#">Home</a></li>
+		      <li class="active"><a href="index.html">Home</a></li>
 		    </ul>
 		    <ul class="nav navbar-nav navbar-right">
 		    	<li><a href="#">Account</a></li>
@@ -75,32 +74,88 @@
 					<tr>
 						<td>
 							<div class="poster">
-								<img class="selected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" src="images/img1.jpg"></img>
+								<img class="selected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#br').modal('show');" src="images/img1.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" src="images/img2.jpg"></img>
+								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#pm').modal('show');" src="images/img2.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" src="images/img3.jpg"></img>
+								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#fmf').modal('show');" src="images/img3.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" src="images/img4.jpg"></img>
+								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#ww').modal('show');" src="images/img4.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" src="images/img5.jpg"></img>
+								<img class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#hni').modal('show');" src="images/img5.jpg"></img>
 							</div>
 						</td>
 					</tr>
 				</table>
 			</div>
+
+			<div id="br" class="modal fade" role="dialog">
+			    <div class="modal-content">
+			      	<div class="modal-body">
+			        	<p>Blade Runner</p>
+			      	</div>
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      	</div>
+			    </div>
+			</div>
+
+			<div id="pm" class="modal fade" role="dialog">
+			    <div class="modal-content">
+			      	<div class="modal-body">
+			        	<p>Princess Mononoke</p>
+			      	</div>
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      	</div>
+			    </div>
+			</div>
+
+			<div id="fmf" class="modal fade" role="dialog">
+			    <div class="modal-content">
+			      	<div class="modal-body">
+			        	<p>Fantastic Mr. Fox</p>
+			      	</div>
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      	</div>
+			    </div>
+			</div>
+
+			<div id="ww" class="modal fade" role="dialog">
+			    <div class="modal-content">
+			      	<div class="modal-body">
+			        	<p>Westworld</p>
+			      	</div>
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      	</div>
+			    </div>
+			</div>
+
+			<div id="hni" class="modal fade" role="dialog">
+			    <div class="modal-content">
+			      	<div class="modal-body">
+			        	<p>Hajime no Ippo</p>
+			      	</div>
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      	</div>
+			    </div>
+			</div>
+
 			<div class="row">
 				<div class="col-md-4 description"></div>
 			</div>

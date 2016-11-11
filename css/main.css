@@ -1,5 +1,5 @@
 p {
-	color: white;
+	color: black;
 }
 
 body {
@@ -31,4 +31,8 @@ body {
 	width: 100%; 
 	display: block; 
 	overflow: auto;
+}
+
+.modal-body {
+
 }
