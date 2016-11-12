@@ -12,16 +12,19 @@
 		<script>
 		var currPoster = 'br';
 
-		function selected(id)
+		function selectPoster(id)
 		{
 			document.getElementById(currPoster).className = "notselected";
+			document.getElementById(currPoster+'-p').className = "dontshow";
 			currPoster = id;
 			document.getElementById(currPoster).className = "selected";
+			document.getElementById(currPoster+'-p').className = "show";
 		}
+
 		</script>
 	</head>
 	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">
+		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 		    <ul class="nav navbar-nav">
 		      <li class="active"><a href="index.html">Home</a></li>
@@ -85,27 +88,27 @@
 					<tr>
 						<td>
 							<div class="poster">
-								<img id="br" class="selected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#br-m').modal('show'); selected(this.id);" src="images/img1.jpg"></img>
+								<img id="br" class="selected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img1.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img id="pm" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#pm-m').modal('show'); selected(this.id);" src="images/img2.jpg"></img>
+								<img id="pm" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img2.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img id="fmf" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#fmf-m').modal('show'); selected(this.id);" src="images/img3.jpg"></img>
+								<img id="fmf" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img3.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img id="ww" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#ww-m').modal('show'); selected(this.id);" src="images/img4.jpg"></img>
+								<img id="ww" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img4.jpg"></img>
 							</div>
 						</td>
 						<td>
 							<div class="poster">
-								<img id="hni" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="$('#hni-m').modal('show'); selected(this.id);" src="images/img5.jpg"></img>
+								<img id="hni" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img5.jpg"></img>
 							</div>
 						</td>
 					</tr>
@@ -168,7 +171,75 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-4 description"></div>
+				<div class="col-md-5">
+					<div class="panel panel-default description-box">
+						<div id="br-p" class="show">
+							<div class="panel-header">
+								<h3 class="description-heading">Blade Runner</h3>
+							</div>
+							<div class="panel-body">
+								<img class="description-poster" src="images/img1.jpg"></img>
+								<div class="description-text">
+									<p>The film depicts a dystopian Los Angeles in which genetically engineered replicants, which are visually indistinguishable from adult humans, are manufactured by the powerful Tyrell Corporation. The use of replicants on Earth is banned and they are exclusively utilized for dangerous or menial work on off-world colonies. Replicants who defy the ban and return to Earth are hunted down and killed ("retired") by special police operatives known as "Blade Runners". The plot focuses on a group of recently escaped replicants hiding in L.A. and the burnt-out expert Blade Runner, Rick Deckard (Harrison Ford), who reluctantly agrees to take on one more assignment to hunt them down.
+									</p>
+								</div>
+								<button type="button" class="btn btn-default play-button" onClick="$('#br-m').modal('show');">Play</button>
+							</div>
+						</div>
+						<div id="pm-p" class="dontshow">
+							<div class="panel-header">
+								<h3 class="description-heading">Princess Mononoke</h3>
+							</div>
+							<div class="panel-body">
+								<img class="description-poster" src="images/img2.jpg"></img>
+								<div class="description-text">
+									<p>Princess Mononoke is set in the late Muromachi period (approximately 1336 to 1573) of Japan with fantasy elements. The story follows the young Emishi prince Ashitaka's involvement in a struggle between the gods of a forest and the humans who consume its resources. The term "Mononoke" (物の怪 or もののけ?) is not a name, but a Japanese word for a spirit or monster. Unlike Ghibli's earlier films, Mononoke has a darker and more violent setting and tone.
+									</p>
+								</div>
+								<button type="button" class="btn btn-default play-button" onClick="$('#pm-m').modal('show');">Play</button>
+							</div>
+						</div>
+						<div id="fmf-p" class="dontshow">
+							<div class="panel-header">
+								<h3 class="description-heading">Fantastic Mr. Fox</h3>
+							</div>
+							<div class="panel-body">
+								<img class="description-poster" src="images/img3.jpg"></img>
+								<div class="description-text">
+									<p>The film is about a fox who steals food each night from three mean and wealthy farmers. They are fed up with Mr. Fox's theft and try to kill him, so they dig their way into the foxes' home, but the animals are able to outwit the farmers and live underground.
+									</p>
+								</div>
+								<button type="button" class="btn btn-default play-button" onClick="$('#fmf-m').modal('show');">Play</button>
+							</div>
+						</div>
+						<div id="ww-p" class="dontshow">
+							<div class="panel-header">
+								<h3 class="description-heading">Westworld</h3>
+							</div>
+							<div class="panel-body">
+								<img class="description-poster" src="images/img4.jpg"></img>
+								<div class="description-text">
+									<p>The program takes place in fictional Westworld, a technologically advanced, Western-themed amusement park populated completely by synthetic androids dubbed "hosts". Westworld caters to high-paying visitors dubbed "newcomers" (or just "guests"), who can do whatever they wish within the park, without fear of retaliation from the hosts.
+									</p>
+								</div>
+								<button type="button" class="btn btn-default play-button" onClick="$('#ww-m').modal('show');">Play</button>
+							</div>
+						</div>
+						<div id="hni-p" class="dontshow">
+							<div class="panel-header">
+								<h3 class="description-heading">Hajime no Ippo: New Challenger</h3>
+							</div>
+							<div class="panel-body">
+								<img class="description-poster" src="images/img5.jpg"></img>
+								<div class="description-text">
+									<p>Japanese Featherweight Champion Ippo Makunouchi has successfully defended and retained his title. Meanwhile, his rival, Ichirou Miyata, has resurfaced in Japan, aiming for his own Featherweight belt in the Oriental Pacific Boxing Federation. When the rest of the world comes knocking, however, will Japan's best fighters rise to the challenge and achieve glory at the top? Or will the small island nation be crushed under the weight of greater entities? This time, champions will become challengers issuing a call to the rest of the world and ready to show off their fighting spirit!
+									</p>
+								</div>
+								<button type="button" class="btn btn-default play-button" onClick="$('#hni-m').modal('show');">Play</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
