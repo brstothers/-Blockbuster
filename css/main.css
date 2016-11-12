@@ -11,7 +11,7 @@ body {
 }
 
 .buffer {
-	height: 175px;
+	height: 100px;
 }
 
 .poster {
@@ -28,11 +28,47 @@ body {
 }
 
 .movies {
+	height: 400px;
 	width: 100%; 
 	display: block; 
 	overflow: auto;
 }
 
-.modal-body {
+.description-box {
+	position: relative;
+	overflow: auto;
+	height: 300px;
+}
 
+.description-heading {
+	text-align: center;
+}
+
+.description-poster {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 150px;
+}
+
+.description-stars {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 125px;
+}
+
+.description-text {
+	margin-top: 10px;
+}
+
+.show {
+	overflow: auto;
+	position: absolute;
+	visibility: visible;
+} 
+
+.dontshow {
+	overflow: auto;
+	position: absolute;
+	visibility: hidden;
 }
