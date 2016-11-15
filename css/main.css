@@ -72,3 +72,11 @@ body {
 	position: absolute;
 	visibility: hidden;
 }
+
+.header-title {
+	font-family: Arial;
+	font-size: 25px;
+	vertical-align: center;
+	text-align: center;
+	color: indigo;
+}
