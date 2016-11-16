@@ -80,3 +80,29 @@ body {
 	text-align: center;
 	color: indigo;
 }
+
+.suggestions-box {
+	height: 300px;
+}
+
+.suggestions-title {
+	margin-top: 5px;
+	font-family: Arial;
+	font-size: 25px;
+	vertical-align: center;
+	text-align: center;
+}
+
+.suggestions-movies {
+	margin-left: 10px;
+	height: 230px;
+	width: 95%; 
+	display: block; 
+	overflow: auto;
+}
+
+.suggestions-poster {
+	width: 125px;
+	display: block;
+	margin-right: 15px;
+}
