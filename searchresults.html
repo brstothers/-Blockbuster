@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<html> <!-- Page to show the search results -->
+
+    <head>
+		<!-- Bootstrap stuff -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/main.css">
+
+		<title>Blockbuster</title>
+
+		<script>
+		var currPoster = 'br';
+
+		function selectPoster(id)
+		{
+			document.getElementById(currPoster).className = "notselected";
+			document.getElementById(currPoster+'-p').className = "dontshow";
+			currPoster = id;
+			document.getElementById(currPoster).className = "selected";
+			document.getElementById(currPoster+'-p').className = "show";
+		}
+
+		</script>
+	</head>
+
+    <body>
+		<nav class="navbar navbar-default"> <!--This its the title section, has the home button, title, and account button-->
+		  <div class="container-fluid">
+		    <ul class="nav navbar-nav">
+		      <li class="active"><a href="index.html">Home</a></li>
+		    </ul>
+			<ul class="nav navbar-nav navbar-right">
+		    	<li><a href="#">Account</a></li>
+		    </ul>
+			<ul class="nav navbar-nav-center">
+		      <p class = "header-title"><font face="Arial Black" size="100%">Blockbuster</font></p>
+		    </ul>
+		  </div>
+		</nav>
+    </body>
+
+</html>
