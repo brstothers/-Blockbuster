@@ -40,6 +40,79 @@
 		    </ul>
 		  </div>
 		</nav>
+
+        <div class="col-md-0"></div>
+				<div class="col-md-4 search">
+				    <div class="input-group">
+				      <span class="input-group-btn">
+				        <form action="searchresults.html"> <!-- button to go to the search results -->
+   							 <button class="btn btn-default" type="submit" value="goto search results">Enter</button>
+						</form>
+				      </span>
+				      <input type="text" class="form-control" placeholder="Enter Title">
+				  </div>
+				</div>
+
+                <div id="br-m" class="modal fade" role="dialog"> <!--Box with the info for each movie-->
+			    <div class="modal-content">
+			      	<div class="modal-body">
+			        	<p>Blade Runner</p>
+			      	</div>
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      	</div>
+			    </div>
+			</div>
+
+			<div id="pm-m" class="modal fade" role="dialog">
+			    <div class="modal-content">
+			      	<div class="modal-body">
+			        	<p>Princess Mononoke</p>
+			      	</div>
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      	</div>
+			    </div>
+			</div>
+
+            
+			<div class="col-md-0"> <!--actual info contained in the box info-->
+				<div class="col-md-12">
+					<div class="panel panel-default description-box">
+						<div id="br-p" class="show">
+							<div class="panel-header">
+								<!--<h3 class="description-heading">Blade Runner</h3>-->
+                                <font size="100%" color="black" style="text-align: left">Blade Runner</font>                             
+							</div>
+							<div class="panel-body">
+								<img class="description-poster" src="images/img1.jpg"></img>
+								<button type="button" class="btn btn-default play-button" onClick="$('#ww-m').modal('show');">Play</button>
+								<div class="description-text">
+									<p>Genre: Fantasy/Drama<br/>Length: 1hr 57m<br/>Description: The film depicts a dystopian Los Angeles in which genetically engineered replicants, which are visually indistinguishable from adult humans, are manufactured by the powerful Tyrell Corporation. The use of replicants on Earth is banned and they are exclusively utilized for dangerous or menial work on off-world colonies. Replicants who defy the ban and return to Earth are hunted down and killed ("retired") by special police operatives known as "Blade Runners". The plot focuses on a group of recently escaped replicants hiding in L.A. and the burnt-out expert Blade Runner, Rick Deckard (Harrison Ford), who reluctantly agrees to take on one more assignment to hunt them down.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div id="pm-p" class="dontshow">
+							<div class="panel-header">
+								<h3 class="description-heading">Princess Mononoke</h3>
+							</div>
+							<div class="panel-body">
+								<img class="description-poster" src="images/img2.jpg"></img>
+								<button type="button" class="btn btn-default play-button" onClick="$('#ww-m').modal('show');">Play</button>
+								<div class="description-text">
+									<p>Genre: Fantasy/Drama<br/>Length: 2hr 15m<br/>Description: Princess Mononoke is set in the late Muromachi period (approximately 1336 to 1573) of Japan with fantasy elements. The story follows the young Emishi prince Ashitaka's involvement in a struggle between the gods of a forest and the humans who consume its resources. The term "Mononoke" (物の怪 or もののけ?) is not a name, but a Japanese word for a spirit or monster. Unlike Ghibli's earlier films, Mononoke has a darker and more violent setting and tone.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
     </body>
 
 </html>
