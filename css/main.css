@@ -87,6 +87,12 @@ body {
 	height: 300px;
 }
 
+.searchResults-box {
+	position: relative;
+	overflow: auto;
+	height: 335px;
+}
+
 .suggestions-title {
 	margin-top: 5px;
 	font-family: Arial;

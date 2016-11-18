@@ -10,20 +10,6 @@
 		<link rel="stylesheet" href="css/main.css">
 
 		<title>Blockbuster</title>
-
-		<script>
-		var currPoster = 'br';
-
-		function selectPoster(id)
-		{
-			document.getElementById(currPoster).className = "notselected";
-			document.getElementById(currPoster+'-p').className = "dontshow";
-			currPoster = id;
-			document.getElementById(currPoster).className = "selected";
-			document.getElementById(currPoster+'-p').className = "show";
-		}
-
-		</script>
 	</head>
 
     <body>
@@ -33,7 +19,7 @@
 		      <li class="active"><a href="index.html">Home</a></li>
 		    </ul>
 			<ul class="nav navbar-nav navbar-right">
-		    	<li><a href="#">Account</a></li>
+		    	<li><a href="account.html">Account</a></li>
 		    </ul>
 			<ul class="nav navbar-nav-center">
 		      <p class = "header-title"><font face="Arial Black" size="100%">Blockbuster</font></p>
@@ -53,13 +39,12 @@
 				  </div>
 				</div>
 
-                <div id="br-m" class="modal fade" role="dialog"> <!--Box with the info for each movie-->
+				<body><br><br></body> <!-- small spave after search bar and before results -->
+
+            <div id="br-m" class="modal fade" role="dialog"> <!--Box with the info for each movie-->
 			    <div class="modal-content">
 			      	<div class="modal-body">
-			        	<p>Blade Runner</p>
-			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        	<p>BladeRunner</p>
 			      	</div>
 			    </div>
 			</div>
@@ -69,20 +54,16 @@
 			      	<div class="modal-body">
 			        	<p>Princess Mononoke</p>
 			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      	</div>
 			    </div>
 			</div>
-
             
-			<div class="col-md-0"> <!--actual info contained in the box info-->
+			<div class="col-md-0"> <!--actual info contained in the box-->
 				<div class="col-md-12">
-					<div class="panel panel-default description-box">
+					<div class="panel panel-default searchResults-box">
 						<div id="br-p" class="show">
 							<div class="panel-header">
 								<!--<h3 class="description-heading">Blade Runner</h3>-->
-                                <font size="100%" color="black" style="text-align: left">Blade Runner</font>                             
+                                <font size="100%" color="black" style="text-align: left">&nbsp;Blade Runner</font>                             
 							</div>
 							<div class="panel-body">
 								<img class="description-poster" src="images/img1.jpg"></img>
@@ -95,9 +76,17 @@
 								</div>
 							</div>
 						</div>
-						<div id="pm-p" class="dontshow">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-0"> <!--actual info contained in the box info-->
+				<div class="col-md-12">
+					<div class="panel panel-default searchResults-box">
+						<div id="pm-m" class="show">
 							<div class="panel-header">
-								<h3 class="description-heading">Princess Mononoke</h3>
+								<!--<h3 class="description-heading">Blade Runner</h3>-->
+                                <font size="100%" color="black" style="text-align: left">&nbsp;Princess Mononoke</font>                             
 							</div>
 							<div class="panel-body">
 								<img class="description-poster" src="images/img2.jpg"></img>
