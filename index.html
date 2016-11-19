@@ -17,6 +17,10 @@
 
 		<script>
 		var currPoster = 'br';
+		var filteredGenre = false;
+		var filteredCategory = false;
+		var currGenre = "not yet";
+		var currCategory = "not yet";
 
 		function selectPoster(id)
 		{
@@ -27,6 +31,92 @@
 			document.getElementById(currPoster+'-p').className = "show";
 		}
 
+		function filterGenre(genre)
+		{
+			var hide = document.getElementsByClassName('poster');
+			var show = document.getElementsByClassName(genre);
+
+			if(!filteredGenre && !filteredCategory)
+			{
+				for (var i = hide.length - 1; i >= 0; i--) 
+				{
+					hide[i].style.display='none';
+				}
+			}
+
+			for (var i = show.length - 1; i >= 0; i--) 
+			{
+				if(!filteredCategory)
+				{
+					show[i].style.display='block';
+				}
+				else
+				{
+					if(show[i].classList.contains(currCategory))
+					{
+						show[i].style.display='block';
+					}
+				}
+			}
+
+			filteredGenre = true;
+			currGenre = genre;
+		}
+
+		function filterCategory(category)
+		{
+			var hide = document.getElementsByClassName('poster');
+			var show = document.getElementsByClassName(category);
+
+			if(!filteredGenre && !filteredCategory)
+			{
+				for (var i = hide.length - 1; i >= 0; i--) 
+				{
+					hide[i].style.display='none';
+				}
+			}
+
+			for (var i = show.length - 1; i >= 0; i--) 
+			{
+				if(!filteredGenre)
+				{
+					show[i].style.display='block';
+				}
+				else
+				{
+					if(show[i].classList.contains(currGenre))
+					{
+						show[i].style.display='block';
+					}
+				}
+			}
+
+			filteredCategory = true;
+			currCategory = category;
+		}
+
+		function checkFilter()
+		{
+			var hide = document.getElementsByClassName('poster');
+
+			for (var i = hide.length - 1; i >= 0; i--) 
+			{
+				if(!hide[i].classList.contains(currGenre) || !hide[i].classList.contains(currCategory))
+				{
+					hide[i].style.display='none';
+				}	
+			}
+		}
+
+		function changeGenre(selected)
+		{
+			document.getElementById('genres').innerHTML = selected;
+		}
+
+		function changeCategory(selected)
+		{
+			document.getElementById('categories').innerHTML = selected;
+		}
 		</script>
 	</head>
 	<body>
@@ -39,7 +129,7 @@
 		    	<li><a href="account.html">Account</a></li>
 		    </ul>
 			<ul class="nav navbar-nav-center">
-		      <p class = "header-title"><font face="Arial Black" size="100%">Blockbuster</font></p>
+		      <p class = "header-title">Blockbuster</p>
 		    </ul>
 		  </div>
 		</nav>
@@ -49,7 +139,7 @@
 				<div class="col-md-12"></div>
 			</div>
 			<div class="row buttons">
-				<div class="col-md-4 sort">
+				<div class="col-md-5 sort">
 					<div class="btn-group"> <!--buttons for the drop up menu-->
 						<div class="btn-group dropup">
 							<button class="btn btn-default dropdown-toggle dropup" data-toggle="dropdown" type="button">Sort By<span class="caret"></span></button>
@@ -58,20 +148,20 @@
 								</ul>
 						</div>
 						<div class="btn-group dropup">
-							<button class="btn btn-default dropdown-toggle dropup" data-toggle="dropdown" type="button">Genres<span class="caret"></span></button>
+							<button class="btn btn-default dropdown-toggle dropup" data-toggle="dropdown" type="button"><span id="genres">Genres</span><span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">Sci-Fi</a></li>
-									<li><a href="#">Western</a></li>
-									<li><a href="#">Drama</a></li>
-									<li><a href="#">Animated</a></li>
+									<li><a onClick="filterGenre('sci-fi'); changeGenre('Sci-Fi'); checkFilter();">Sci-Fi</a></li>
+									<li><a onClick="filterGenre('western'); changeGenre('Western'); checkFilter();">Western</a></li>
+									<li><a onClick="filterGenre('drama'); changeGenre('Drama'); checkFilter();">Drama</a></li>
+									<li><a onClick="filterGenre('animated'); changeGenre('Animated'); checkFilter();">Animated</a></li>
 								</ul>
 						</div>
 						<div class="btn-group dropup">
-							<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Categories<span class="caret"></span></button>
+							<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"><span id="categories">Categories</span><span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">TV</a></li>
-									<li><a href="#">Movies</a></li>
-									<li><a href="#">Anime</a></li>
+									<li><a onClick="filterCategory('tv'); changeCategory('TV'); checkFilter();">TV</a></li>
+									<li><a onClick="filterCategory('movie'); changeCategory('Movies'); checkFilter();">Movies</a></li>
+									<li><a onClick="filterCategory('anime'); changeCategory('Anime'); checkFilter();">Anime</a></li>
 								</ul>
 						</div>
 						<div class="btn-group dropup">
@@ -82,12 +172,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4"></div>
+				<div class="col-md-3"></div>
 				<div class="col-md-4 search">
 				    <div class="input-group">
 				      <span class="input-group-btn">
 						<form action="searchresults.html"> <!-- button to go to the search results -->
-   							 <button class="btn btn-default" type="submit" value="goto search results">Enter</button>
+   							 <button class="btn btn-default" type="submit" value="goto search results">Search</button>
 						</form>
 				      </span>
 				      <input type="text" class="form-control" placeholder="Enter Title">
@@ -98,47 +188,47 @@
 				<table class="movies" border="0">
 					<tr> <!--Movie and TV show slider with movie poster-->
 						<td>
-							<div class="poster">
+							<div class="poster movie sci-fi drama">
 								<img id="br" class="selected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img1.jpg"></img>
 							</div>
 						</td>
 						<td>
-							<div class="poster">
+							<div class="poster movie drama">
 								<img id="pm" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img2.jpg"></img>
 							</div>
 						</td>
 						<td>
-							<div class="poster">
+							<div class="poster movie animated">
 								<img id="fmf" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img3.jpg"></img>
 							</div>
 						</td>
 						<td>
-							<div class="poster">
+							<div class="poster drama sci-fi western tv">
 								<img id="ww" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img4.jpg"></img>
 							</div>
 						</td>
 						<td>
-							<div class="poster">
+							<div class="poster anime animated drama">
 								<img id="hni" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img5.jpg"></img>
 							</div>
 						</td>
 						<td>
-							<div class="poster">
+							<div class="poster movie sci-fi drama">
 								<img id="in" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img6.jpg"></img>
 							</div>
 						</td>
 						<td>
-							<div class="poster">
+							<div class="poster movie drama">
 								<img id="tw" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img7.jpg"></img>
 							</div>
 						</td>
 						<td>
-							<div class="poster">
+							<div class="poster movie sci-fi">
 								<img id="tm" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img8.jpg"></img>
 							</div>
 						</td>
-						<td>
-							<div class="poster">
+						<td class="postertable">
+							<div class="poster movie drama">
 								<img id="ip" class="notselected" onmouseover="this.style.opacity=0.7;" onmouseout="this.style.opacity=1;" onClick="selectPoster(this.id);" src="images/img9.jpg"></img>
 							</div>
 						</td>

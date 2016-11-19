@@ -20,10 +20,12 @@ body {
 }
 
 .selected {
+	height: 375px;
 	width:250px;
 }
 
 .notselected {
+	height: 350px;
 	width:225px;
 }
 
@@ -76,8 +78,8 @@ body {
 }
 
 .header-title {
-	font-family: Arial;
-	font-size: 25px;
+	font-family: Arial Black;
+	font-size: 30px;
 	vertical-align: center;
 	text-align: center;
 	color: indigo;
