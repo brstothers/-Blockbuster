@@ -31,6 +31,21 @@
 			document.getElementById(currPoster+'-p').className = "show";
 		}
 
+		function rate(curr, rating)
+		{
+			var movie = document.getElementsByClassName(curr);
+
+			for(var i = 0; i < rating; i++)
+			{
+				movie[i].src="images/starfilled.png";
+			}
+
+			for(var i = rating; i < movie.length; i++)
+			{
+				movie[i].src="images/starempty.png";
+			}
+		}
+
 		function filterGenre(genre)
 		{
 			var hide = document.getElementsByClassName('poster');
@@ -236,105 +251,6 @@
 				</table>
 			</div>
 
-			<div id="br-m" class="modal fade" role="dialog"> <!--Box with the info for each movie-->
-			    <div class="modal-content">
-			      	<div class="modal-body">
-			        	<p>Blade Runner</p>
-			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      	</div>
-			    </div>
-			</div>
-
-			<div id="pm-m" class="modal fade" role="dialog">
-			    <div class="modal-content">
-			      	<div class="modal-body">
-			        	<p>Princess Mononoke</p>
-			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      	</div>
-			    </div>
-			</div>
-
-			<div id="fmf-m" class="modal fade" role="dialog">
-			    <div class="modal-content">
-			      	<div class="modal-body">
-			        	<p>Fantastic Mr. Fox</p>
-			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      	</div>
-			    </div>
-			</div>
-
-			<div id="ww-m" class="modal fade" role="dialog">
-			    <div class="modal-content">
-			      	<div class="modal-body">
-			        	<p>Westworld</p>
-			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      	</div>
-			    </div>
-			</div>
-
-			<div id="hni-m" class="modal fade" role="dialog">
-			    <div class="modal-content">
-			      	<div class="modal-body">
-			        	<p>Hajime no Ippo</p>
-			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      	</div>
-			    </div>
-			</div>
-
-			<div id="in-m" class="modal fade" role="dialog">
-			    <div class="modal-content">
-			      	<div class="modal-body">
-			        	<p>Interstellar</p>
-			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      	</div>
-			    </div>
-			</div>
-
-			<div id="tw-m" class="modal fade" role="dialog">
-			    <div class="modal-content">
-			      	<div class="modal-body">
-			        	<p>The Wolf of Wall Street</p>
-			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      	</div>
-			    </div>
-			</div>
-
-			<div id="tm-m" class="modal fade" role="dialog">
-			    <div class="modal-content">
-			      	<div class="modal-body">
-			        	<p>The Matrix</p>
-			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      	</div>
-			    </div>
-			</div>
-
-			<div id="ip-m" class="modal fade" role="dialog">
-			    <div class="modal-content">
-			      	<div class="modal-body">
-			        	<p>Princess Mononoke</p>
-			      	</div>
-			      	<div class="modal-footer">
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      	</div>
-			    </div>
-			</div>
-
 			<div class="row"> <!--actual info contained in the box info-->
 				<div class="col-md-5">
 					<div class="panel panel-default description-box">
@@ -344,7 +260,13 @@
 							</div>
 							<div class="panel-body">
 								<img class="description-poster" src="images/img1.jpg"></img>
-								<img class="description-stars" src="images/stars.png"></img>
+								<div class="rating">
+									<img class="br-rating" onClick="rate('br-rating', 1);" src="images/starempty.png"></img>
+									<img class="br-rating" onClick="rate('br-rating', 2);" src="images/starempty.png"></img>
+									<img class="br-rating" onClick="rate('br-rating', 3);" src="images/starempty.png"></img>
+									<img class="br-rating" onClick="rate('br-rating', 4);" src="images/starempty.png"></img>
+									<img class="br-rating" onClick="rate('br-rating', 5);" src="images/starempty.png"></img>
+								</div>
 								<form action="videoPlayer.html">
    										 <button class="btn btn-default" type="submit" value="test123">Play</button>
 									</form>
@@ -360,7 +282,13 @@
 							</div>
 							<div class="panel-body">
 								<img class="description-poster" src="images/img2.jpg"></img>
-								<img class="description-stars" src="images/stars.png"></img>
+								<div class="rating">
+									<img class="pm-rating" onClick="rate('pm-rating', 1);" src="images/starempty.png"></img>
+									<img class="pm-rating" onClick="rate('pm-rating', 2);" src="images/starempty.png"></img>
+									<img class="pm-rating" onClick="rate('pm-rating', 3);" src="images/starempty.png"></img>
+									<img class="pm-rating" onClick="rate('pm-rating', 4);" src="images/starempty.png"></img>
+									<img class="pm-rating" onClick="rate('pm-rating', 5);" src="images/starempty.png"></img>
+								</div>
 								<form action="videoPlayer.html"> <!-- button to go to the video player -->
    										 <button class="btn btn-default" type="submit" value="goto video player">Play</button>
 									</form>
@@ -376,7 +304,13 @@
 							</div>
 							<div class="panel-body">
 								<img class="description-poster" src="images/img3.jpg"></img>
-								<img class="description-stars" src="images/stars.png"></img>
+								<div class="rating">
+									<img class="fmf-rating" onClick="rate('fmf-rating', 1);" src="images/starempty.png"></img>
+									<img class="fmf-rating" onClick="rate('fmf-rating', 2);" src="images/starempty.png"></img>
+									<img class="fmf-rating" onClick="rate('fmf-rating', 3);" src="images/starempty.png"></img>
+									<img class="fmf-rating" onClick="rate('fmf-rating', 4);" src="images/starempty.png"></img>
+									<img class="fmf-rating" onClick="rate('fmf-rating', 5);" src="images/starempty.png"></img>
+								</div>
 								<form action="videoPlayer.html"> <!-- button to go to the video player -->
    										 <button class="btn btn-default" type="submit" value="goto video player">Play</button>
 									</form>
@@ -392,7 +326,13 @@
 							</div>
 							<div class="panel-body">
 								<img class="description-poster" src="images/img4.jpg"></img>
-								<img class="description-stars" src="images/stars.png"></img>
+								<div class="rating">
+									<img class="ww-rating" onClick="rate('ww-rating', 1);" src="images/starempty.png"></img>
+									<img class="ww-rating" onClick="rate('ww-rating', 2);" src="images/starempty.png"></img>
+									<img class="ww-rating" onClick="rate('ww-rating', 3);" src="images/starempty.png"></img>
+									<img class="ww-rating" onClick="rate('ww-rating', 4);" src="images/starempty.png"></img>
+									<img class="ww-rating" onClick="rate('ww-rating', 5);" src="images/starempty.png"></img>
+								</div>
 								<form action="videoPlayer.html"> <!-- button to go to the video player -->
    										 <button class="btn btn-default" type="submit" value="goto video player">Play</button>
 									</form>
@@ -408,7 +348,13 @@
 							</div>
 							<div class="panel-body">
 								<img class="description-poster" src="images/img5.jpg"></img>
-								<img class="description-stars" src="images/stars.png"></img>
+								<div class="rating">
+									<img class="hni-rating" onClick="rate('hni-rating', 1);" src="images/starempty.png"></img>
+									<img class="hni-rating" onClick="rate('hni-rating', 2);" src="images/starempty.png"></img>
+									<img class="hni-rating" onClick="rate('hni-rating', 3);" src="images/starempty.png"></img>
+									<img class="hni-rating" onClick="rate('hni-rating', 4);" src="images/starempty.png"></img>
+									<img class="hni-rating" onClick="rate('hni-rating', 5);" src="images/starempty.png"></img>
+								</div>
 								<form action="videoPlayer.html"> <!-- button to go to the video player -->
    										 <button class="btn btn-default" type="submit" value="goto video player">Play</button>
 									</form>
@@ -424,7 +370,13 @@
 							</div>
 							<div class="panel-body">
 								<img class="description-poster" src="images/img6.jpg"></img>
-								<img class="description-stars" src="images/stars.png"></img>
+								<div class="rating">
+									<img class="in-rating" onClick="rate('in-rating', 1);" src="images/starempty.png"></img>
+									<img class="in-rating" onClick="rate('in-rating', 2);" src="images/starempty.png"></img>
+									<img class="in-rating" onClick="rate('in-rating', 3);" src="images/starempty.png"></img>
+									<img class="in-rating" onClick="rate('in-rating', 4);" src="images/starempty.png"></img>
+									<img class="in-rating" onClick="rate('in-rating', 5);" src="images/starempty.png"></img>
+								</div>
 								<form action="videoPlayer.html"> <!-- button to go to the video player -->
    										 <button class="btn btn-default" type="submit" value="goto video player">Play</button>
 									</form>
@@ -440,7 +392,13 @@
 							</div>
 							<div class="panel-body">
 								<img class="description-poster" src="images/img7.jpg"></img>
-								<img class="description-stars" src="images/stars.png"></img>
+								<div class="rating">
+									<img class="tw-rating" onClick="rate('tw-rating', 1);" src="images/starempty.png"></img>
+									<img class="tw-rating" onClick="rate('tw-rating', 2);" src="images/starempty.png"></img>
+									<img class="tw-rating" onClick="rate('tw-rating', 3);" src="images/starempty.png"></img>
+									<img class="tw-rating" onClick="rate('tw-rating', 4);" src="images/starempty.png"></img>
+									<img class="tw-rating" onClick="rate('tw-rating', 5);" src="images/starempty.png"></img>
+								</div>
 								<form action="videoPlayer.html"> <!-- button to go to the video player -->
    										 <button class="btn btn-default" type="submit" value="goto video player">Play</button>
 									</form>
@@ -456,7 +414,13 @@
 							</div>
 							<div class="panel-body">
 								<img class="description-poster" src="images/img8.jpg"></img>
-								<img class="description-stars" src="images/stars.png"></img>
+								<div class="rating">
+									<img class="tm-rating" onClick="rate('tm-rating', 1);" src="images/starempty.png"></img>
+									<img class="tm-rating" onClick="rate('tm-rating', 2);" src="images/starempty.png"></img>
+									<img class="tm-rating" onClick="rate('tm-rating', 3);" src="images/starempty.png"></img>
+									<img class="tm-rating" onClick="rate('tm-rating', 4);" src="images/starempty.png"></img>
+									<img class="tm-rating" onClick="rate('tm-rating', 5);" src="images/starempty.png"></img>
+								</div>
 								<form action="videoPlayer.html"> <!-- button to go to the video player -->
    										 <button class="btn btn-default" type="submit" value="goto video player">Play</button>
 									</form>
@@ -472,7 +436,13 @@
 							</div>
 							<div class="panel-body">
 								<img class="description-poster" src="images/img9.jpg"></img>
-								<img class="description-stars" src="images/stars.png"></img>
+								<div class="rating">
+									<img class="ip-rating" onClick="rate('ip-rating', 1);" src="images/starempty.png"></img>
+									<img class="ip-rating" onClick="rate('ip-rating', 2);" src="images/starempty.png"></img>
+									<img class="ip-rating" onClick="rate('ip-rating', 3);" src="images/starempty.png"></img>
+									<img class="ip-rating" onClick="rate('ip-rating', 4);" src="images/starempty.png"></img>
+									<img class="ip-rating" onClick="rate('ip-rating', 5);" src="images/starempty.png"></img>
+								</div>
 								<form action="videoPlayer.html"> <!-- button to go to the video player -->
    										 <button class="btn btn-default" type="submit" value="goto video player">Play</button>
 									</form>
