@@ -10,6 +10,57 @@
 		<link rel="stylesheet" href="css/main.css">
 
 		<title>Blockbuster</title>
+        <script>
+            function start() {
+                var movieSource;
+                var movieTitle;
+                var id = parseInt(location.search.substring(1).split("=")[1])
+                switch (id) {
+                    case 1:
+                        movieTitle = "Blade Runner";
+                        movieSource = "video/The Wolf of Wall Street Official Trailer.mp4";
+                        break;
+                    case 2:
+                        movieTitle = "Princess Mononoke";
+                        movieSource = "video/Princess Mononoke Official Trailer.mp4";
+                        break;
+                    case 3:
+                        movieTitle = "Fantasic Mr. Fox";
+                        movieSource = "video/Fantastic Mr Fox Official Trailer.mp4";
+                        break;
+                    case 4:
+                        movieTitle = "Westworld";
+                        movieSource = "video/Westworld Official Trailer.mp4";
+                        break;
+                    case 5:
+                        movieTitle = "Hajime no Ippo: New Challenger";
+                        movieSource = "video/Hajime no Ippo New Challenger  Official  Trailer.mp4"
+                        break;
+                    case 6:
+                        movieTitle = "Interstellar";
+                        movieSource = "video/Interstellar Official Trailer.mp4";
+                        break;
+                    case 7:
+                        movieTitle = "The Wolf of Wall Street";
+                        movieSource = "video/The Wolf of Wall Street Official Trailer.mp4";
+                        break;
+                    case 8:
+                        movieTitle = "The Matrix";
+                        movieSource = "video/The Matrix Official Trailer.mp4";
+                        break;
+                    case 9:
+                        movieTitle = "IP Man";
+                        movieSource = "video/IP MAN TRAILER.mp4";
+                        break;
+                }
+                var video = document.getElementById('vid');
+                video.src = movieSource;
+                
+                var title = document.getElementById('toptitle');
+                title.innerText = movieTitle;
+            }
+            window.onload = start;
+        </script>
 	</head>
 
     <body>
@@ -29,12 +80,12 @@
 
         <div> <!-- title for video player -->
             <ul class="nav navbar-nav-center">
-		      <p class = "header-title"><font color = "white" face="Arial Black" size="100%">The Wolf of Wall Street</font></p> <!-- in the future the title must be pulled from the data the user submitted -->
+		      <p class = "header-title" ><font id = "toptitle" color = "white" face="Arial Black" size="100%">The Wolf of Wall Street</font></p> <!-- in the future the title must be pulled from the data the user submitted -->
 		    </ul>
         </div>
 
         <div align="center"> <!-- the video player -->
-            <video width="1280" controls>
+            <video width="1280" controls id="vid">
                 <source src="video/The Wolf of Wall Street Official Trailer.mp4" type="video/mp4"> <!-- in the future the video must be pulled from the user submission -->
             </video>
         </div>
